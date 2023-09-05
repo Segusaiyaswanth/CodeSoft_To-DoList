@@ -1,0 +1,49 @@
+tasks = []
+
+# Function to add a new task to the list
+def add_task():
+    task = input("Enter a new task: ")
+    tasks.append(task)
+    print("Task added successfully!")
+
+# Function to remove a task from the list
+def remove_task():
+    if len(tasks) == 0:
+        print("No tasks to remove.")
+    else:
+        task = input("Enter the task to remove: ")
+        if task in tasks:
+            tasks.remove(task)
+            print("Task removed successfully!")
+        else:
+            print("Task not found.")
+
+# Function to display all tasks
+def display_tasks():
+    if len(tasks) == 0:
+        print("No tasks found.")
+    else:
+        print("Tasks:")
+        for task in tasks:
+            print(task)
+
+# Main menu loop
+while True:
+    print("\n========= TO-DO LIST =========")
+    print("1. Add a new task")
+    print("2. Remove a task")
+    print("3. Display all tasks")
+    print("0. Exit")
+
+    choice = input("\nEnter your choice (0-3): ")
+
+    if choice == "1":
+        add_task()
+    elif choice == "2":
+        remove_task()
+    elif choice == "3":
+        display_tasks()
+    elif choice == "0":
+        break
+    else:
+        print("Invalid choice. Please try again.")
